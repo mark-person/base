@@ -45,6 +45,13 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 		</dependency>
 		
+		<!-- https://mvnrepository.com/artifact/com.google.protobuf/protobuf-java mysql8 nosql用 -->
+		<dependency>
+		    <groupId>com.google.protobuf</groupId>
+		    <artifactId>protobuf-java</artifactId>
+		    <version>3.6.1</version>
+		</dependency>
+		
 	</dependencies>
 
 
