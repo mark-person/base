@@ -25,7 +25,7 @@
     	<!-- 管理员不能修改密码 --> 
     	<a th:if="${!account.admin}" href="javascript:editPassword()">修改密码</a><span th:if="${!account.admin}">｜</span>
     	<a href="javascript:logout()">退出</a>&nbsp;&nbsp;
-    	<a th:if="${account.admin}" target="_blank" th:href="@{/auto/monitorView/access}">
+    	<a th:if="${account.admin}" target="_blank" th:href="@{/auto/monitor/access}">
     		<i class="fa fa-thermometer"></i>系统监控
     	</a>
     </div>
