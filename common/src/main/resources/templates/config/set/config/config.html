@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link th:replace="common/fragment::common"/>
+
+
+<script type="text/javascript" th:inline="javascript">
+
+function formatJson(txt,compress) {
+    var indentChar = '    ';
+    if(/^\s*$/.test(txt)){   
+        alert('数据为空,无法格式化! ');   
+        return;   
+    }   
+    try{var data=eval('('+txt+')');}   
+    catch(e){   
+        alert('数据源语法错误,格式化失败! 错误信息: '+e.description,'err');   
+        return;   
+    };   
+    var draw=[],last=false,This=this,line=compress?'':'\n',nodeCount=0,maxDepth=0;   
+       
+    var notify=function(name,value,isLast,indent,formObj){   
+        nodeCount++; 
+        for (var i=0,tab='';i<indent;i++ )tab+=indentChar;  
+        tab=compress?'':tab;  
+        maxDepth=++indent;
+        if(value&&value.constructor==Array){  
+            draw.push(tab+(formObj?('"'+name+'":'):'')+'['+line); 
+            for (var i=0;i<value.length;i++)   
+                notify(i,value[i],i==value.length-1,indent,false);   
+            draw.push(tab+']'+(isLast?line:(','+line)));  
+        }else   if(value&&typeof value=='object'){ 
+                draw.push(tab+(formObj?('"'+name+'":'):'')+'{'+line);  
+                var len=0,i=0;   
+                for(var key in value)len++;   
+                for(var key in value)notify(key,value[key],++i==len,indent,true);   
+                draw.push(tab+'}'+(isLast?line:(','+line)));  
+            }else{   
+                    if(typeof value=='string')value='"'+value+'"';   
+                    draw.push(tab+(formObj?('"'+name+'":'):'')+value+(isLast?'':',')+line);   
+            };   
+    };   
+    var isLast=true,indent=0;   
+    notify('',data,isLast,indent,false);   
+    return draw.join('');   
+}
+
+
+var controllerPath = contextPath + "auto/config/";
+$(function() {
+	$("#pageDiv").page({url:controllerPath + "list", data:[[${list}]]});
+});
+
+function edit(configName, configValue) {
+	$("#editConfigValue").val(formatJson(configValue));
+	$('#edit').modal('show');
+	
+	action = function() {
+		showLoading();
+		$.post(controllerPath + "update", {configName:configName, configValue:$("#editConfigValue").val()}, function(r) {
+			if (r.errcode === 0) {
+				alertSuccess(r.errmsg);
+				$('#edit').modal('hide');
+				$("#pageDiv").query();
+			}
+			else {
+				hideLoading();
+				alertDanger(r.errmsg);
+			}
+		});
+	}
+}
+
+
+</script>
+</head>
+
+<body>
+<div class="container-fluid">
+
+<div id="pageDiv" th:include="common/fragment::page('配置信息')">
+	<div th:fragment="query">
+	</div>
+	<table th:fragment="list">
+		<thead class="thead-light">
+		<tr>
+			<th class="w-id">config_name</th>
+			<th class="w-id">artifact_id</th>
+			<th style="width:500px">config_value</th>
+			<th style="width:300px">config_desc</th>
+			<th class="w-time">修改时间</th>
+			<th class="w-action">操作</th>
+		</tr>
+		</thead>
+		<tbody></tbody>
+	</table>
+	<table>
+		<tr th:fragment="template">
+			<td>{{v.configName}}</td>
+			<td>{{v.artifactId}}</td>
+			<td><div class="ellipsis" style="width:500px">{{v.configValue}}</div></td>
+			<td><div class="ellipsis" style="width:300px">{{v.configDesc}}</div></td>
+			<td>{{v.modified}}</td>
+			<td>
+				<a href="#this" onclick="edit('{{v.configName}}', '{{v.configValue}}')">[修改]</a>
+			</td>
+		</tr>
+	</table>
+</div>
+
+
+<div th:fragment="edit" th:replace="common/fragment::modal('edit', '修改', 'modal-lg')">
+	<input type="hidden" id="editConfigName">
+	<div class="form-group form-inline">
+		<textarea rows="10" cols="100" class="form-control" id="editConfigValue" value=""></textarea>
+	</div>
+</div>
+
+
+
+
+</div>
+</body>
+</html>
+

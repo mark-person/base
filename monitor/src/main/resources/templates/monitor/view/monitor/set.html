@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link th:replace="common/fragment::common"/>
+<link th:replace="monitor/monitorFragment::monitor"/>
+<script type="text/javascript" th:src="@{/static/monitor/honey-switch.js}"></script>
+<link rel="stylesheet" th:href="@{/static/monitor/honey-switch.css}" />
+
+<script type="text/javascript" th:inline="javascript">
+$(function() {
+	
+	freshPage([[${listJson}]]);
+	honeySwitch.init();
+	
+	switchEvent("[name=switch]", function(obj){
+		var serviceId = $(obj).attr("data-service-id");
+		var model = $(obj).attr("data-model");
+		onSwitch(serviceId, model, true);
+	}, function(obj){
+		var serviceId = $(obj).attr("data-service-id");
+		var model = $(obj).attr("data-model");
+		onSwitch(serviceId, model, false);
+	});
+	
+});
+
+function freshPage(data) {
+	if (!data) return;
+	$("#pageTemplate").parent().find("tr:gt(0)").remove();
+	$("#pageTemplate").parent().append(template('pageTemplate', data));
+}
+
+
+function onSwitch(serviceId, model, isOpen) {
+	$('#loading').modal('show');
+	if (model == "debug") {
+		var para = {serviceId:serviceId,debug:isOpen};
+		$.post([[@{/auto/monitor/setAccessDebug}]], para, function(r){
+			$("[name='lasted" + serviceId + "']").text(r.now);
+			$('#loading').modal('hide');
+			alertSuccess();
+		});
+	}
+	else if (model == "warning") {
+		var para = {serviceId:serviceId,warning:isOpen};
+		$.post([[@{/auto/monitor/setAccessWarning}]], para, function(r){
+			$("[name='lasted" + serviceId + "']").text(r.now);
+			$('#loading').modal('hide');
+			alertSuccess();
+		});
+	}
+}
+
+
+
+function clean() {
+	
+}
+
+</script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+<div th:replace="monitor/monitorFragment::nav('access')"></div>
+
+	<div class="page-list-query">
+		<div class="page-list-title">	
+			<div style="padding-top:4px">设置同步时间30秒(本机立即生效)；
+				<span style="color:red">warning和debug会影响系统性能(机器重启为关闭状态)，不使用时请关闭。</span>			
+			</div>		
+		</div>
+	</div>
+	
+	<table class="table table-bordered table-hover table-condensed">
+		<tr>
+			<th style="width:160px">服务</th>
+			<th>warning模式</th>  
+			<th>debug模式</th> 
+			<th>最后修改时间</th>    
+		</tr>
+		<script id="pageTemplate" type="text/html">
+		{{each}}
+		<tr>
+			<td>{{$value.serviceId}}</td>
+			<td>
+				<div class="cell-right"><span name="switch" data-service-id="{{$value.serviceId}}" data-model="warning" class="{{if $value.isWarning}}switch-on{{else}}switch-off{{/if}}"></span></div>
+			</td>
+			<td>
+				<div class="cell-right"><span name="switch" data-service-id="{{$value.serviceId}}" data-model="debug" class="{{if $value.isDebug}}switch-on{{else}}switch-off{{/if}}"></span></div>
+			</td>
+			<td name="lasted{{$value.serviceId}}">{{$value.modified}}</td>
+		</tr>
+		{{/each}}
+		</script>  
+	</table>
+	
+	<div class="RedSea-Title-1">
+		<button type="button" class="btn btn-primary" onclick="cleanDebug()">清除debug</button>			
+	</div>
+	
+</div>
+
+
+<div class="modal fade" id="cleanConfig" role="dialog" tabindex="-1">
+   <div class="modal-dialog" style="width:500px;">
+      <div class="modal-content">
+         <div class="modal-header">
+            <button aria-hidden="true" class="close" data-dismiss="modal" type="button">×</button>
+            <h4 class="modal-title">确认</h4>
+         </div>
+         <div class="modal-body" style="height:auto">
+         	<div class="form-group" style="width:100%;text-align: center;">      	
+         		<span id="msg" data-type=""></span>
+         		<input type="text" id="deletePassword" placeholder="请输入清除密码" class="form-control input-sm" style="display:inline-block; width:150px">
+         	</div>
+         </div>
+         <div class="modal-footer"><button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+         	<button type="button" class="btn btn-danger" onclick="clean()">确定清除</button>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<title>DEMO</title>
+
+<meta charset="UTF-8">
+<link th:replace="common/fragment::common"/>
+<link rel="stylesheet" th:href="@{/static/auth/index/menu.css}" />
+<script type="text/javascript" th:src="@{/static/auth/index/menu.js}"></script>
+<script type="text/javascript" th:inline="javascript">var menu = [[${menu}]];</script>
+
+
+<body style="display:">
+    <div id="menuDiv" class="list-group"><ul id="accordion" class="accordion"></ul></div>
+    
+    <div id="topDiv" style="background-color:#EEEEEE;">
+    	<a id="toggleId" class="fa fa-chevron-left" style="padding-right:20px;text-decoration:none;" href="javascript:toggleMenu()"></a>
+    	
+    	<span th:if="${account.mainAccount}">用户帐号：</span>
+    	<span th:if="${!account.mainAccount}">子帐号：</span>
+    	
+    	<span th:text="${account.loginAccount}"></span>&nbsp;&nbsp; 
+    	用户名称：<span th:text="${account.userName}"></span>&nbsp;&nbsp;
+    	
+    	<a href="javascript:gotoIndex()">首页</a>｜
+    	<!-- 管理员不能修改密码 --> 
+    	<a th:if="${!account.admin}" href="javascript:editPassword()">修改密码</a><span th:if="${!account.admin}">｜</span>
+    	<a href="javascript:logout()">退出</a>&nbsp;&nbsp;
+    	<a th:if="${account.admin}" target="_blank" th:href="@{/auto/monitorView/access}">
+    		<i class="fa fa-thermometer"></i>系统监控
+    	</a>
+    </div>
+    
+    <div id="iframeDiv">
+    	<div id="iframeLoading"><span class="glyphicon glyphicon-info-sign">请稍候...</div>
+		<iframe id="content" th:if="${account.admin}"  th:src="@{/auto/index/adminHome}" onload="iframeLoad()"></iframe>
+		<iframe id="content" th:if="${!account.admin}"  th:src="@{/auto/index/home}" onload="iframeLoad()"></iframe>
+    </div>
+</body>
