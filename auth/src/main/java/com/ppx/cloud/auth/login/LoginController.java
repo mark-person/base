@@ -16,7 +16,6 @@ import com.auth0.jwt.JWT;
 import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-import com.ppx.cloud.auth.cache.AuthCache;
 import com.ppx.cloud.auth.cache.EhCacheService;
 import com.ppx.cloud.auth.config.AuthUtils;
 import com.ppx.cloud.auth.pojo.AuthAccount;
@@ -35,9 +34,6 @@ public class LoginController {
 
 	@Autowired
 	private LoginServiceImpl impl;
-
-	@Autowired
-	private EhCacheService ehCacheServ;
 
 	private final static String VALIDATE_TOKEN_PASSWORK = "FSSBBA";
 	private final static String VALIDATE_TOKEN_NAME = "FSSBBIl1UgzbN7N443T";
@@ -95,16 +91,12 @@ public class LoginController {
 			// 帐号和密码正确，则在cookie上生成一个token, grantAll, grantAuth
 			String token = "";
 			try {
-				// 取得权限缓存，支持分布式(allVersion和grantVersion跟服务器版本比较）
-				AuthCache authCache = ehCacheServ.getAuthVersion();
 					
 				// modified用来校验帐号或密码被修改
 				Algorithm algorithm = Algorithm.HMAC256(AuthUtils.getJwtPassword());
 				token = JWT.create().withIssuedAt(new Date()).withClaim("accountId", account.getAccountId())
 						.withClaim("loginAccount", account.getLoginAccount()).withClaim("userId", account.getUserId())
 						.withClaim("userName", account.getUserName()).withClaim("modified", account.getModified())
-						.withClaim("authAll", authCache.getAllVersion())
-						.withClaim("authGrant", authCache.getGrantVersion())
 						.sign(algorithm);
 				CookieUtils.setCookie(response, AuthUtils.PPXTOKEN, token);
 

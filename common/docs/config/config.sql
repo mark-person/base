@@ -16,13 +16,16 @@ create table config_value (
 	primary key (config_name)
 );
 
-INSERT INTO `config_value` (`config_name`,`config_module`,`config_value`,`config_desc`) 
-	VALUES ('AUTH','auth','{\"JWT_PASSWORD\": \"JWTPASSWORD\", \"ADMIN_PASSWORD\": \"ee70e58531bc525d5b818be90357faa4\", \"JWT_VALIDATE_SECOND\": 86400}','明文:admin');
-INSERT INTO `config_value` (`config_name`,`config_module`,`config_value`,`config_desc`) 
-	VALUES ('MONITOR_SWITCH','monitor','{\"IS_DEBUG\": false, \"IS_WARNING\": false}',NULL);
-INSERT INTO `config_value` (`config_name`,`config_module`,`config_value`,`config_desc`) 
-	VALUES ('MONITOR_THRESHOLD','monitor','{\"MAX_CPU_DUMP\": 0.9, \"DUMP_MAX_TIME\": 5000, \"GATHER_INTERVAL\": 300000, \"MAX_MEMORY_DUMP\": 0.9}',NULL);
-
+INSERT INTO `config_value` (`config_name`,`artifact_id`,`config_value`,`config_desc`) 
+	VALUES ('AUTH_ALL','base-demo',NULL,'清除所有权限缓存(不需初始化)');
+INSERT INTO `config_value` (`config_name`,`artifact_id`,`config_value`,`config_desc`) 
+	VALUES ('AUTH_CONFIG','base-demo','{\"JWT_PASSWORD\": \"JWTPASSWORD\", \"ADMIN_PASSWORD\": \"ee70e58531bc525d5b818be90357faa4\", \"JWT_VALIDATE_SECOND\": 86400}','明文:admin');
+INSERT INTO `config_value` (`config_name`,`artifact_id`,`config_value`,`config_desc`) 
+	VALUES ('AUTH_GRANT','base-demo',NULL,'清除分配权限缓存(不需初始化)');
+INSERT INTO `config_value` (`config_name`,`artifact_id`,`config_value`,`config_desc`) 
+	VALUES ('MONITOR_SWITCH','base-demo','{\"IS_DEBUG\": true, \"IS_WARNING\": true}',NULL);
+INSERT INTO `config_value` (`config_name`,`artifact_id`,`config_value`,`config_desc`) 
+	VALUES ('MONITOR_THRESHOLD','base-demo','{\"MAX_CPU_DUMP\": 0.9, \"DUMP_MAX_TIME\": 5000, \"GATHER_INTERVAL\": 300000, \"MAX_MEMORY_DUMP\": 0.9}',NULL);
 
 create table config_exec_result (
 	config_name		varchar(64) not null,

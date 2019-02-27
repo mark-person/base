@@ -1,5 +1,5 @@
 
-
+/** ----------------- auth ----------------- */
 create table auth_res (
 	res_id int not null auto_increment,
     parent_id int not null,
@@ -14,7 +14,7 @@ create table auth_uri_seq (
 	uri_seq int not null auto_increment,
     uri_text varchar(64) not null,
     primary key (uri_seq)
-) comment='URI系列';
+) comment='URI序列';
 
 alter table  auth_uri_seq add unique index idx_auth_uri_text (uri_text asc);
 
@@ -26,7 +26,6 @@ create table auth_res_uri (
 ) comment='资源对应多个URI';
 
 
-/** ----------------- auth ----------------- */
 /**
  * account_status 判断帐号有效性
  * modified 判断帐号或密码已经被修改，用来检验tocken的有效性
@@ -65,13 +64,7 @@ create table auth_grant (
     primary key (account_id, res_id)
 ) comment='分配资源权限';
 
-create table auth_cache (
-  cache_type varchar(32) not null,
-  all_version int(11) not null comment '所有权限缓存版本',
-  grant_version int(11) not null comment '分配权限缓存版本',
-  primary key (cache_type)
-) comment='权限缓存';
-insert into auth_cache(cache_type, all_version, grant_version) values('version', 1, 1);
+
 
 
 

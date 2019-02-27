@@ -18,11 +18,10 @@ import org.springframework.stereotype.Service;
 import com.ppx.cloud.common.jdbc.MyDaoSupport;
 
 
-
 /**
  * # 分两部分刷新:一个是刷新所有(菜单修改后)，一个是刷新权限部分(修改权限后)
  * @author mark
- * @date 2018年6月22日
+ * @date 2019年2月27日
  */
 @Service
 public class EhCacheServiceImpl extends MyDaoSupport implements EhCacheService {
@@ -30,38 +29,21 @@ public class EhCacheServiceImpl extends MyDaoSupport implements EhCacheService {
 	@Autowired
 	@Qualifier(EhCacheConfig.LOCAL_MANAGER)
 	private CacheManager cacheManager;
-	
-	public AuthCache getAuthVersion() {
-	    AuthCache authCache = getJdbcTemplate().queryForObject("select all_version, grant_version from auth_cache where cache_type = ?",
-                BeanPropertyRowMapper.newInstance(AuthCache.class), AuthCache.AUTH_VERSION);
-        return authCache;
-	}
-	
-	public AuthCache initAuthVersion() {
-	    int c = getJdbcTemplate().queryForObject("select count(*) from auth_cache where cache_type = ?"
-	            , Integer.class, AuthCache.AUTH_VERSION);
-	    if (c == 0) {
-	        String insertSql = "insert auth_cache(cache_type, all_version, grant_version) values(?, ?, ?)";
-	        getJdbcTemplate().update(insertSql, AuthCache.AUTH_VERSION, 1, 1);
-	        return new AuthCache(1, 1);
-	    }
-	    else {
-	        return getAuthVersion();
-	    } 
-    }
+
 	
 	public void increaseAllDbVersion() {
 		// 删除本机缓存
 		clearAllLocalCache();
-        String sql = "update auth_cache set all_version = all_version + 1 where cache_type = ?";
-        getJdbcTemplate().update(sql, AuthCache.AUTH_VERSION);
+		
+		// TODO 调用配置清除所有权限缓存
 	}
 	
 	public void increaseGrantDbVersion() {
 		// 删除本机缓存
 		clearGrantLocalCache();
-	    String sql = "update auth_cache set grant_version = grant_version + 1 where cache_type = ?";
-        getJdbcTemplate().update(sql, AuthCache.AUTH_VERSION);
+		
+		// TODO 调用配置清除分配权限缓存
+		
 	}
 	
 	public void clearAllLocalCache() {

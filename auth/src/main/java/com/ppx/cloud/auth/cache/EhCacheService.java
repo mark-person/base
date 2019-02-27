@@ -5,10 +5,6 @@ import java.util.Map;
 
 public interface EhCacheService {
     
-    AuthCache getAuthVersion();
-    
-    AuthCache initAuthVersion();
-    
     void increaseAllDbVersion();
     
     void increaseGrantDbVersion();
