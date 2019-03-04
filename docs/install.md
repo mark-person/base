@@ -7,7 +7,12 @@
 # 打包
 在父类中打包
 
-# 基本设置(UTF-8, Unix)
+# tab设置成4个空格
+打开eclipse-windows-preferences 
+General -> Editors -> Text Editors -> 钩上Insert spaces for tabs -> Apply and Close
+Java -> Code Style -> Formatter -> New... xxx -> Tab policy 选择Spaces only
+
+#  基本设置(UTF-8, Unix)
 Preferences -> General -> Workspace:Text file encodeing:UTF-8, New text file line delimiter:Unix
 
 # properties乱码
