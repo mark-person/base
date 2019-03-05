@@ -50,18 +50,24 @@ mysql> flush privileges;
 # 查看是否安装mariadb
 rpm -qa | grep mariadb
 rpm -e --nodeps mariadb-libs-5.5.56-2.el7.x86_644
+或rpm -e --nodeps mariadb-libs-5.5.52-1.el7.x86_64
+
 
 # 安装mysql 依赖包
-yum install libaio
+yum install libaio (可能已经安装最新版)
 
 # 去掉目录
 tar -xvf /home/ppx/ftp/mysql-8.0.13-linux-glibc2.12-x86_64.tar.xz --strip-components 1 -C /home/ppx/mysql
+或 tar -xvf /home/ppx/ftp/mysql-8.0.15-linux-glibc2.12-x86_64.tar.xz --strip-components 1 -C /home/ppx/mysql
+
 
 # Default options are read from the following files in the given order:
 /etc/my.cnf /etc/mysql/my.cnf /usr/local/mysql/etc/my.cnf ~/.my.cnf 
 
 
 /usr/local/mysql/bin/mysqld --initialize --user=root --basedir=/usr/local/mysql/ --datadir=/usr/local/mysql/data
+或   /home/ppx/mysql/bin/mysqld --initialize --user=root --basedir=/home/ppx/mysql --datadir=/home/ppx/data/mysql
+
 
 # error:./mysqld: error while loading shared libraries: libnuma.so.1: cannot open shared object file: No such file or directory
 yum -y install numactl
@@ -77,7 +83,24 @@ yum -y install numactl
 
 
 
+chown -R mysql:mysql /home/ppx/data/mysql
+/etc/init.d/mysql start
 
+
+[mysqld]
+datadir=/home/ppx/data/mysql
+socket=/home/ppx/mysql/mysql.sock
+
+log-error=/home/ppx/mysql/log/mysqld.log
+pid-file=/home/ppx/mysql/mysqld/mysqld.pid
+
+#忘记密码时使用
+#skip-grant-tables
+#设置协议认证方式(重点啊)
+default_authentication_plugin=mysql_native_password
+
+[mysql]
+socket=/home/ppx/mysql/mysql.sock
 
 
 
