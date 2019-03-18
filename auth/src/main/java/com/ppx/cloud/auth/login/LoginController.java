@@ -102,6 +102,7 @@ public class LoginController {
 				impl.updateLastLogin(account.getAccountId());
 				return ReturnMap.of();
 			} catch (Exception e) {
+				e.printStackTrace();
 				throw new LoginException("系统登录异常" + e.getClass().getSimpleName());
 			}
 		}
