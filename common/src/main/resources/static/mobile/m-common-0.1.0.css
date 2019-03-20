@@ -1,0 +1,21 @@
+html{
+    font-size: 16px;
+}
+
+.ellipsis {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+
+#myAlert {position:fixed;display:none;margin:auto;top:0;transform:translate(-50%,0%);left:50%;z-index:99999999}
+.required {color:red}
+
+.sorting, .sorting-asc, .sorting-desc {cursor:pointer}
+.sorting > .fa:after {content:"\f07d";}
+.sorting-asc > .fa:after {content:"\f160";}
+.sorting-desc > .fa:after {content:"\f161";}
+
+.w-id {min-width:4.375rem}
+.w-date {min-width:6.875rem}
+.w-time {min-width:10.625rem}
+.w-action {min-width:13.125rem} /*17.5rem*/
+.w-title {min-width:9.375rem}
+.w-number {min-width:4.375rem}
+
