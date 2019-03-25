@@ -73,8 +73,8 @@ public class MyCriteria {
 	}
 
 	public String toString() {
-		if (paraStr.size() == 0) return "";
-		else return " " + pre + " " + StringUtils.collectionToDelimitedString(paraStr, " and ");
+		if (paraStr.size() == 0) return " ";
+		else return " " + pre + " " + StringUtils.collectionToDelimitedString(paraStr, " and ") + " ";
 	}
 
 	public List<Object> getParaList() {
