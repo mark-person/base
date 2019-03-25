@@ -1,0 +1,762 @@
+nohup: failed to run command ‘jd/home/ppx/jdk/jdk-11.0.1/bin/java’: No such file or directory
+Error: Unable to access jarfile /home/ppx/app/repository-0.1.0.jar
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:39:37.613  INFO 4819 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 4819 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:39:37.620 DEBUG 4819 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:39:37.643  INFO 4819 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: client
+2019-03-25 17:39:40.081  INFO 4819 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:39:40.112  INFO 4819 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:39:40.113  INFO 4819 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:39:40.123  INFO 4819 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:39:40.225  INFO 4819 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:39:40.225  INFO 4819 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2464 ms
+2019-03-25 17:39:40.243  INFO 4819 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:39:40.247  INFO 4819 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:39:40.304  WARN 4819 --- [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'test2ServiceImpl': Unsatisfied dependency expressed through method 'setMyJdbcTemplate' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.JdbcTemplateAutoConfiguration$JdbcTemplateConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [com.zaxxer.hikari.HikariDataSource]: Factory method 'dataSource' threw exception; nested exception is org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$DataSourceBeanCreationException: Failed to determine a suitable driver class
+2019-03-25 17:39:40.312  INFO 4819 --- [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by org.apache.catalina.loader.WebappClassLoaderBase (jar:file:/home/ppx/app/repository-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/tomcat-embed-core-9.0.12.jar!/) to field java.io.ObjectStreamClass$Caches.localDescs
+WARNING: Please consider reporting this to the maintainers of org.apache.catalina.loader.WebappClassLoaderBase
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2019-03-25 17:39:40.342  INFO 4819 --- [           main] ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-03-25 17:39:40.344 ERROR 4819 --- [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to configure a DataSource: 'url' attribute is not specified and no embedded datasource could be configured.
+
+Reason: Failed to determine a suitable driver class
+
+
+Action:
+
+Consider the following:
+	If you want an embedded database (H2, HSQL or Derby), please put it on the classpath.
+	If you have database settings to be loaded from a particular profile you may need to activate it (the profiles client are currently active).
+
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:40:46.430  INFO 4964 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 4964 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:40:46.441 DEBUG 4964 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:40:46.442  INFO 4964 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: prod
+2019-03-25 17:40:48.678  INFO 4964 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:40:48.721  INFO 4964 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:40:48.721  INFO 4964 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:40:48.737  INFO 4964 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:40:48.856  INFO 4964 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:40:48.856  INFO 4964 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2326 ms
+2019-03-25 17:40:48.875  INFO 4964 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:40:48.880  INFO 4964 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:40:49.095  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:49.166  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:49.242  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:49.411  INFO 4964 --- [           main] n.s.e.p.s.filter.AnnotationSizeOfFilter  : Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2019-03-25 17:40:49.425  INFO 4964 --- [           main] n.sf.ehcache.pool.sizeof.JvmInformation  : Detected JVM data model settings of: 64-Bit HotSpot JVM with Compressed OOPs
+2019-03-25 17:40:49.480  INFO 4964 --- [           main] net.sf.ehcache.pool.sizeof.AgentLoader   : Failed to attach to VM and load the agent: class java.io.IOException: Can not attach to current VM
+2019-03-25 17:40:49.484  INFO 4964 --- [           main] n.s.e.pool.impl.DefaultSizeOfEngine      : using Unsafe sizeof engine
+2019-03-25 17:40:49.574  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:49.586  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:49.595  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:49.634  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:49.659  INFO 4964 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:40:50.430  INFO 4964 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------begin
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getTotalPhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @456d4133
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getTotalPhysicalMemorySize(MonitorUtils.java:132)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:122)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getFreePhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @456d4133
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getFreePhysicalMemorySize(MonitorUtils.java:144)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:123)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (jar:file:/home/ppx/app/repository-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/protobuf-java-3.6.1.jar!/) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2019-03-25 17:40:51.028  INFO 4964 --- [           main] c.p.c.monitor.queue.AccessQueueConsumer  : AccessQueueConsumer.start()...
+2019-03-25 17:40:51.030  INFO 4964 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------end
+2019-03-25 17:40:51.047  INFO 4964 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-25 17:40:51.163  INFO 4964 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-25 17:40:51.231  INFO 4964 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-03-25 17:40:51.235  INFO 4964 --- [           main] com.ppx.cloud.RepositoryApplication      : Started RepositoryApplication in 5.691 seconds (JVM running for 6.361)
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:41:02.400  INFO 5049 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 5049 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:41:02.406 DEBUG 5049 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:41:02.408  INFO 5049 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: prod
+2019-03-25 17:41:04.652  INFO 5049 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:41:04.684  INFO 5049 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:41:04.684  INFO 5049 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:41:04.695  INFO 5049 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:41:04.788  INFO 5049 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:41:04.788  INFO 5049 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2266 ms
+2019-03-25 17:41:04.811  INFO 5049 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:41:04.815  INFO 5049 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:41:05.003  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:05.060  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:05.107  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:05.232  INFO 5049 --- [           main] n.s.e.p.s.filter.AnnotationSizeOfFilter  : Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2019-03-25 17:41:05.244  INFO 5049 --- [           main] n.sf.ehcache.pool.sizeof.JvmInformation  : Detected JVM data model settings of: 64-Bit HotSpot JVM with Compressed OOPs
+2019-03-25 17:41:05.310  INFO 5049 --- [           main] net.sf.ehcache.pool.sizeof.AgentLoader   : Failed to attach to VM and load the agent: class java.io.IOException: Can not attach to current VM
+2019-03-25 17:41:05.313  INFO 5049 --- [           main] n.s.e.pool.impl.DefaultSizeOfEngine      : using Unsafe sizeof engine
+2019-03-25 17:41:05.401  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:05.420  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:05.438  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:05.478  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:05.503  INFO 5049 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:41:06.148  INFO 5049 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------begin
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getTotalPhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @178b473a
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getTotalPhysicalMemorySize(MonitorUtils.java:132)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:122)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getFreePhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @178b473a
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getFreePhysicalMemorySize(MonitorUtils.java:144)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:123)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (jar:file:/home/ppx/app/repository-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/protobuf-java-3.6.1.jar!/) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2019-03-25 17:41:06.740  INFO 5049 --- [           main] c.p.c.monitor.queue.AccessQueueConsumer  : AccessQueueConsumer.start()...
+2019-03-25 17:41:06.742  INFO 5049 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------end
+2019-03-25 17:41:06.752  INFO 5049 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-25 17:41:06.871  INFO 5049 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-25 17:41:06.938  INFO 5049 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-03-25 17:41:06.954  INFO 5049 --- [           main] com.ppx.cloud.RepositoryApplication      : Started RepositoryApplication in 5.513 seconds (JVM running for 6.152)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getSystemCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @178b473a
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getSystemCpuLoad(MonitorUtils.java:156)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:54)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getProcessCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @178b473a
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getProcessCpuLoad(MonitorUtils.java:174)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:55)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:43:08.480  INFO 5300 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 5300 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:43:08.485 DEBUG 5300 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:43:08.486  INFO 5300 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: prod
+2019-03-25 17:43:10.856  INFO 5300 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:43:10.891  INFO 5300 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:43:10.891  INFO 5300 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:43:10.903  INFO 5300 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:43:11.005  INFO 5300 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:43:11.005  INFO 5300 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2394 ms
+2019-03-25 17:43:11.026  INFO 5300 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:43:11.030  INFO 5300 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:43:11.237  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:11.285  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:11.362  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:11.500  INFO 5300 --- [           main] n.s.e.p.s.filter.AnnotationSizeOfFilter  : Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2019-03-25 17:43:11.513  INFO 5300 --- [           main] n.sf.ehcache.pool.sizeof.JvmInformation  : Detected JVM data model settings of: 64-Bit HotSpot JVM with Compressed OOPs
+2019-03-25 17:43:11.555  INFO 5300 --- [           main] net.sf.ehcache.pool.sizeof.AgentLoader   : Failed to attach to VM and load the agent: class java.io.IOException: Can not attach to current VM
+2019-03-25 17:43:11.558  INFO 5300 --- [           main] n.s.e.pool.impl.DefaultSizeOfEngine      : using Unsafe sizeof engine
+2019-03-25 17:43:11.643  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:11.658  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:11.670  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:11.705  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:11.727  INFO 5300 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:12.368  INFO 5300 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------begin
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getTotalPhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @374eabc5
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getTotalPhysicalMemorySize(MonitorUtils.java:132)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:122)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getFreePhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @374eabc5
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getFreePhysicalMemorySize(MonitorUtils.java:144)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:123)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (jar:file:/home/ppx/app/repository-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/protobuf-java-3.6.1.jar!/) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2019-03-25 17:43:12.980  INFO 5300 --- [           main] c.p.c.monitor.queue.AccessQueueConsumer  : AccessQueueConsumer.start()...
+2019-03-25 17:43:12.981  INFO 5300 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------end
+2019-03-25 17:43:12.992  INFO 5300 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-25 17:43:13.095  INFO 5300 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-25 17:43:13.154  INFO 5300 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-03-25 17:43:13.158  INFO 5300 --- [           main] com.ppx.cloud.RepositoryApplication      : Started RepositoryApplication in 5.587 seconds (JVM running for 6.265)
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:43:16.551  INFO 5365 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 5365 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:43:16.566 DEBUG 5365 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:43:16.567  INFO 5365 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: prod
+2019-03-25 17:43:19.132  INFO 5365 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:43:19.169  INFO 5365 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:43:19.169  INFO 5365 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:43:19.180  INFO 5365 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:43:19.281  INFO 5365 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:43:19.282  INFO 5365 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2584 ms
+2019-03-25 17:43:19.299  INFO 5365 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:43:19.303  INFO 5365 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:43:19.499  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:19.548  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:19.600  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:19.771  INFO 5365 --- [           main] n.s.e.p.s.filter.AnnotationSizeOfFilter  : Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2019-03-25 17:43:19.783  INFO 5365 --- [           main] n.sf.ehcache.pool.sizeof.JvmInformation  : Detected JVM data model settings of: 64-Bit HotSpot JVM with Compressed OOPs
+2019-03-25 17:43:19.821  INFO 5365 --- [           main] net.sf.ehcache.pool.sizeof.AgentLoader   : Failed to attach to VM and load the agent: class java.io.IOException: Can not attach to current VM
+2019-03-25 17:43:19.830  INFO 5365 --- [           main] n.s.e.pool.impl.DefaultSizeOfEngine      : using Unsafe sizeof engine
+2019-03-25 17:43:19.851  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:19.865  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:19.877  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:19.902  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:19.931  INFO 5365 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:43:20.522  INFO 5365 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------begin
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getTotalPhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @2e675f76
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getTotalPhysicalMemorySize(MonitorUtils.java:132)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:122)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getFreePhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @2e675f76
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getFreePhysicalMemorySize(MonitorUtils.java:144)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:123)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (jar:file:/home/ppx/app/repository-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/protobuf-java-3.6.1.jar!/) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2019-03-25 17:43:21.078  INFO 5365 --- [           main] c.p.c.monitor.queue.AccessQueueConsumer  : AccessQueueConsumer.start()...
+2019-03-25 17:43:21.080  INFO 5365 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------end
+2019-03-25 17:43:21.090  INFO 5365 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-25 17:43:21.212  INFO 5365 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-25 17:43:21.269  INFO 5365 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-03-25 17:43:21.274  INFO 5365 --- [           main] com.ppx.cloud.RepositoryApplication      : Started RepositoryApplication in 5.606 seconds (JVM running for 6.26)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getSystemCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @2e675f76
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getSystemCpuLoad(MonitorUtils.java:156)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:54)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getProcessCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @2e675f76
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getProcessCpuLoad(MonitorUtils.java:174)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:55)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:44:09.452  INFO 5494 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 5494 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:44:09.455 DEBUG 5494 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:44:09.456  INFO 5494 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: prod
+2019-03-25 17:44:11.615  INFO 5494 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:44:11.651  INFO 5494 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:44:11.652  INFO 5494 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:44:11.662  INFO 5494 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:44:11.762  INFO 5494 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:44:11.762  INFO 5494 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2236 ms
+2019-03-25 17:44:11.780  INFO 5494 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:44:11.784  INFO 5494 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:44:11.971  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:12.022  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:12.064  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:12.266  INFO 5494 --- [           main] n.s.e.p.s.filter.AnnotationSizeOfFilter  : Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2019-03-25 17:44:12.280  INFO 5494 --- [           main] n.sf.ehcache.pool.sizeof.JvmInformation  : Detected JVM data model settings of: 64-Bit HotSpot JVM with Compressed OOPs
+2019-03-25 17:44:12.325  INFO 5494 --- [           main] net.sf.ehcache.pool.sizeof.AgentLoader   : Failed to attach to VM and load the agent: class java.io.IOException: Can not attach to current VM
+2019-03-25 17:44:12.329  INFO 5494 --- [           main] n.s.e.pool.impl.DefaultSizeOfEngine      : using Unsafe sizeof engine
+2019-03-25 17:44:12.348  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:12.363  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:12.373  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:12.400  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:12.418  INFO 5494 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:44:13.157  INFO 5494 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------begin
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getTotalPhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @13c6f35d
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getTotalPhysicalMemorySize(MonitorUtils.java:132)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:122)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getFreePhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @13c6f35d
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getFreePhysicalMemorySize(MonitorUtils.java:144)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:123)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (jar:file:/home/ppx/app/repository-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/protobuf-java-3.6.1.jar!/) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2019-03-25 17:44:13.687  INFO 5494 --- [           main] c.p.c.monitor.queue.AccessQueueConsumer  : AccessQueueConsumer.start()...
+2019-03-25 17:44:13.690  INFO 5494 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------end
+2019-03-25 17:44:13.705  INFO 5494 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-25 17:44:13.806  INFO 5494 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-25 17:44:13.903  INFO 5494 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-03-25 17:44:13.907  INFO 5494 --- [           main] com.ppx.cloud.RepositoryApplication      : Started RepositoryApplication in 5.421 seconds (JVM running for 6.039)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getSystemCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @13c6f35d
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getSystemCpuLoad(MonitorUtils.java:156)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:54)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getProcessCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @13c6f35d
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getProcessCpuLoad(MonitorUtils.java:174)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:55)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:45:56.053  INFO 5709 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 5709 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:45:56.071 DEBUG 5709 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:45:56.073  INFO 5709 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: prod
+2019-03-25 17:45:58.443  INFO 5709 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:45:58.472  INFO 5709 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:45:58.473  INFO 5709 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:45:58.483  INFO 5709 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:45:58.570  INFO 5709 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:45:58.570  INFO 5709 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2395 ms
+2019-03-25 17:45:58.589  INFO 5709 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:45:58.593  INFO 5709 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:45:58.757  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:58.807  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:58.863  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:59.066  INFO 5709 --- [           main] n.s.e.p.s.filter.AnnotationSizeOfFilter  : Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2019-03-25 17:45:59.081  INFO 5709 --- [           main] n.sf.ehcache.pool.sizeof.JvmInformation  : Detected JVM data model settings of: 64-Bit HotSpot JVM with Compressed OOPs
+2019-03-25 17:45:59.126  INFO 5709 --- [           main] net.sf.ehcache.pool.sizeof.AgentLoader   : Failed to attach to VM and load the agent: class java.io.IOException: Can not attach to current VM
+2019-03-25 17:45:59.129  INFO 5709 --- [           main] n.s.e.pool.impl.DefaultSizeOfEngine      : using Unsafe sizeof engine
+2019-03-25 17:45:59.153  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:59.169  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:59.177  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:59.214  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:59.235  INFO 5709 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:45:59.852  INFO 5709 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------begin
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getTotalPhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @9799ae8
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getTotalPhysicalMemorySize(MonitorUtils.java:132)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:122)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+java.lang.reflect.InaccessibleObjectException: Unable to make public long com.sun.management.internal.OperatingSystemImpl.getFreePhysicalMemorySize() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @9799ae8
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getFreePhysicalMemorySize(MonitorUtils.java:144)
+	at com.ppx.cloud.monitor.StartMonitor.getServiceInfo(StartMonitor.java:123)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:59)
+	at com.ppx.cloud.monitor.StartMonitor.onApplicationEvent(StartMonitor.java:35)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:172)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:165)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:139)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:398)
+	at org.springframework.context.support.AbstractApplicationContext.publishEvent(AbstractApplicationContext.java:355)
+	at org.springframework.context.support.AbstractApplicationContext.finishRefresh(AbstractApplicationContext.java:882)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.finishRefresh(ServletWebServerApplicationContext.java:161)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:549)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:140)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:775)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:397)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:316)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at com.ppx.cloud.RepositoryApplication.main(RepositoryApplication.java:14)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.springframework.boot.loader.MainMethodRunner.run(MainMethodRunner.java:48)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:87)
+	at org.springframework.boot.loader.Launcher.launch(Launcher.java:50)
+	at org.springframework.boot.loader.JarLauncher.main(JarLauncher.java:51)
+WARNING: An illegal reflective access operation has occurred
+WARNING: Illegal reflective access by com.google.protobuf.UnsafeUtil (jar:file:/home/ppx/app/repository-0.0.1-SNAPSHOT.jar!/BOOT-INF/lib/protobuf-java-3.6.1.jar!/) to field java.nio.Buffer.address
+WARNING: Please consider reporting this to the maintainers of com.google.protobuf.UnsafeUtil
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+WARNING: All illegal access operations will be denied in a future release
+2019-03-25 17:46:00.490  INFO 5709 --- [           main] c.p.c.monitor.queue.AccessQueueConsumer  : AccessQueueConsumer.start()...
+2019-03-25 17:46:00.492  INFO 5709 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------end
+2019-03-25 17:46:00.502  INFO 5709 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-25 17:46:00.620  INFO 5709 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-25 17:46:00.681  INFO 5709 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-03-25 17:46:00.686  INFO 5709 --- [           main] com.ppx.cloud.RepositoryApplication      : Started RepositoryApplication in 5.582 seconds (JVM running for 6.254)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getSystemCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @9799ae8
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getSystemCpuLoad(MonitorUtils.java:156)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:54)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+java.lang.reflect.InaccessibleObjectException: Unable to make public double com.sun.management.internal.OperatingSystemImpl.getProcessCpuLoad() accessible: module jdk.management does not "opens com.sun.management.internal" to unnamed module @9799ae8
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:340)
+	at java.base/java.lang.reflect.AccessibleObject.checkCanSetAccessible(AccessibleObject.java:280)
+	at java.base/java.lang.reflect.Method.checkCanSetAccessible(Method.java:198)
+	at java.base/java.lang.reflect.Method.setAccessible(Method.java:192)
+	at com.ppx.cloud.monitor.util.MonitorUtils.getProcessCpuLoad(MonitorUtils.java:174)
+	at com.ppx.cloud.monitor.queue.TimingGather.gather(TimingGather.java:55)
+	at com.ppx.cloud.monitor.queue.AccessQueueConsumer.lambda$start$0(AccessQueueConsumer.java:39)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+info.app.artifactId=repository
+info.app.version=0.0.1-SNAPSHOT
+2019-03-25 17:47:30.806  INFO 5905 --- [           main] com.ppx.cloud.RepositoryApplication      : Starting RepositoryApplication v0.0.1-SNAPSHOT on VM_176_219_centos with PID 5905 (/home/ppx/app/repository-0.0.1-SNAPSHOT.jar started by root in /home/ppx/app)
+2019-03-25 17:47:30.814 DEBUG 5905 --- [           main] com.ppx.cloud.RepositoryApplication      : Running with Spring Boot v2.1.0.RELEASE, Spring v5.1.2.RELEASE
+2019-03-25 17:47:30.816  INFO 5905 --- [           main] com.ppx.cloud.RepositoryApplication      : The following profiles are active: prod
+2019-03-25 17:47:33.277  INFO 5905 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 80 (http)
+2019-03-25 17:47:33.304  INFO 5905 --- [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-03-25 17:47:33.304  INFO 5905 --- [           main] org.apache.catalina.core.StandardEngine  : Starting Servlet Engine: Apache Tomcat/9.0.12
+2019-03-25 17:47:33.315  INFO 5905 --- [           main] o.a.catalina.core.AprLifecycleListener   : The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib]
+2019-03-25 17:47:33.402  INFO 5905 --- [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-03-25 17:47:33.402  INFO 5905 --- [           main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2414 ms
+2019-03-25 17:47:33.420  INFO 5905 --- [           main] o.s.b.w.servlet.ServletRegistrationBean  : Servlet dispatcherServlet mapped to [/]
+2019-03-25 17:47:33.424  INFO 5905 --- [           main] o.s.b.w.servlet.FilterRegistrationBean   : Mapping filter: 'characterEncodingFilter' to: [/*]
+2019-03-25 17:47:33.611  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:33.659  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:33.720  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:33.836  INFO 5905 --- [           main] n.s.e.p.s.filter.AnnotationSizeOfFilter  : Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2019-03-25 17:47:33.848  INFO 5905 --- [           main] n.sf.ehcache.pool.sizeof.JvmInformation  : Detected JVM data model settings of: 64-Bit HotSpot JVM with Compressed OOPs
+2019-03-25 17:47:33.890  INFO 5905 --- [           main] net.sf.ehcache.pool.sizeof.AgentLoader   : Failed to attach to VM and load the agent: class java.io.IOException: Can not attach to current VM
+2019-03-25 17:47:33.895  INFO 5905 --- [           main] n.s.e.pool.impl.DefaultSizeOfEngine      : using Unsafe sizeof engine
+2019-03-25 17:47:33.981  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:33.995  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:34.014  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:34.041  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:34.057  INFO 5905 --- [           main] o.s.aop.framework.CglibAopProxy          : Unable to proxy interface-implementing method [public final void org.springframework.dao.support.DaoSupport.afterPropertiesSet() throws java.lang.IllegalArgumentException,org.springframework.beans.factory.BeanInitializationException] because it is marked as final: Consider using interface-based JDK proxies instead!
+2019-03-25 17:47:34.680  INFO 5905 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------begin
+2019-03-25 17:47:35.154  INFO 5905 --- [           main] c.p.c.monitor.queue.AccessQueueConsumer  : AccessQueueConsumer.start()...
+2019-03-25 17:47:35.156  INFO 5905 --- [           main] com.ppx.cloud.monitor.StartMonitor       : StartMonitor----------end
+2019-03-25 17:47:35.166  INFO 5905 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-03-25 17:47:35.280  INFO 5905 --- [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-03-25 17:47:35.342  INFO 5905 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 80 (http) with context path ''
+2019-03-25 17:47:35.350  INFO 5905 --- [           main] com.ppx.cloud.RepositoryApplication      : Started RepositoryApplication in 5.507 seconds (JVM running for 6.137)
+2019-03-25 17:47:57.394  INFO 5905 --- [p-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-03-25 17:47:57.395  INFO 5905 --- [p-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-03-25 17:47:57.404  INFO 5905 --- [p-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-03-25 17:48:00.966 ERROR 5905 --- [       Thread-3] c.p.c.monitor.output.PersistenceImpl     : insertStatSql:com.ppx.cloud.monitor.pojo.AccessLog@451ac6e3
+2019-03-25 17:48:25.171 ERROR 5905 --- [       Thread-3] c.p.c.monitor.output.PersistenceImpl     : insertStatSql:com.ppx.cloud.monitor.pojo.AccessLog@70aacc1e
+2019-03-25 17:49:16.091 ERROR 5905 --- [       Thread-3] c.p.c.monitor.output.PersistenceImpl     : insertStatSql:com.ppx.cloud.monitor.pojo.AccessLog@2f9f23d9
+2019-03-25 17:51:34.366 ERROR 5905 --- [       Thread-3] c.p.c.monitor.output.PersistenceImpl     : insertStatSql:com.ppx.cloud.monitor.pojo.AccessLog@3e5da055
+2019-03-25 17:51:36.880 ERROR 5905 --- [       Thread-3] c.p.c.monitor.output.PersistenceImpl     : insertStatSql:com.ppx.cloud.monitor.pojo.AccessLog@7f6eb335
