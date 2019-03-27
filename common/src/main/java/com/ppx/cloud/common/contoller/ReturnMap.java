@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.ppx.cloud.common.exception.ErrorPojo;
 import com.ppx.cloud.common.exception.ErrorUtils;
+import com.ppx.cloud.common.page.MPage;
 import com.ppx.cloud.common.page.Page;
 
 /**
@@ -85,6 +86,10 @@ public class ReturnMap {
 	}
 	
 	public static Map<String, Object> of(Page page, List<?> list) {
+		return Map.of(ERRCODE_TITLE, ERRCODE_SUCCESS, "page", page, "list", list);
+	}
+	
+	public static Map<String, Object> of(MPage page, List<?> list) {
 		return Map.of(ERRCODE_TITLE, ERRCODE_SUCCESS, "page", page, "list", list);
 	}
 	
