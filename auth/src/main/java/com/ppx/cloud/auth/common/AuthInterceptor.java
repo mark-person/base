@@ -24,8 +24,8 @@ public class AuthInterceptor implements HandlerInterceptor {
 		String contextPath = request.getContextPath();
 		String uri = request.getRequestURI().replace(contextPath, "");
 		
-		// 不拦截登录和配置请求，移动端
-		if (uri.startsWith("/auto/login/") || uri.startsWith("/auto/configApi/") || uri.startsWith("/auto/home/")) {
+		// 不拦截登录和配置请求，移动端index
+		if (uri.startsWith("/auto/login/") || uri.startsWith("/auto/configApi/") || uri.startsWith("/index")) {
 			return true;
 		}
 		LoginAccount account = AuthFilterUtils.getLoginAccout(request, response, uri);
