@@ -12,5 +12,31 @@
 ' or '1' = 'test
 
 
+# mysql 改成emoji
+win:在“HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services”中查找“Mysql"
+E:\Program\mysql-8.0.13-winx64\bin\mysqld --defaults-file="E:\Program\mysql-8.0.13-winx64\bin\my.cnf" mysql8
 
+
+
+[client]
+
+default-character-set=utf8mb4
+
+ 
+
+[mysqld]
+
+character-set-client-handshake = FALSE
+
+character-set-server = utf8mb4
+
+collation-server = utf8mb4_unicode_ci
+
+init_connect=’SET NAMES utf8mb4'
+
+ 
+
+[mysql]
+
+default-character-set=utf8mb4
 
