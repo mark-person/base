@@ -1,5 +1,5 @@
 
-body {font-size:0.875rem;margin:0.2rem auto 3rem auto;width:25.875rem;}
+body {font-size:0.875rem;margin:0 auto 0 auto;width:25.875rem;}
 
 
 .ellipsis {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
