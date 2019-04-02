@@ -1,4 +1,12 @@
 
+if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	$("html").css("font-size", window.screen.width/(25.875)+'px');
+}
+else {
+	$("html").css("font-size", '16px');
+}
+
+
 $.ajaxSetup({
 	error: function(r, textStatus, errorThrown) {
 		var msg = "";
