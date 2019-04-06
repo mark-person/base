@@ -14,7 +14,12 @@ $.ajaxSetup({
 			msg = "[" + r.responseJSON.errcode + "]" + r.responseJSON.errmsg;
 		}
 		$('#loading').modal('hide');
-		alertDanger("error:" + r.status + "|" + this.url + "|" + msg);
+		if (r.status == 0) {
+			alertWarning("网络不通，请检查网络");
+		}
+		else {
+			alertDanger("error:" + r.status + "|" + this.url + "|" + msg);
+		}
 	}
 });
 
