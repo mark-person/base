@@ -25,10 +25,10 @@ $.ajaxSetup({
 
 
 var LOADING = '\
-<div class="modal" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" style="z-index:10000">\
-	<div class="modal-dialog modal-sm" role="document">\
-	<div class="modal-content" style="height:50px;margin-top:180px;text-align:center">\
-		<div style="padding-top:13px;"><span class="fa fa-refresh fa-spin"></span>⌛请稍候</div>\
+<div class="modal" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" style="z-index:100000000">\
+	<div class="modal-dialog modal-sm" role="document"  style="position:fixed;left:0;right:0;top:0;bottom:0;margin:auto;text-align:center;width:15rem;height:3rem">\
+	<div class="modal-content" style="display:flex;align-items:center;">\
+		<div style="margin:0.5rem">⌛请稍候</div>\
 	</div>\
 	</div>\
 </div>';
