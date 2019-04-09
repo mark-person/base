@@ -31,6 +31,7 @@ public class CookieUtils {
 		Cookie cookie = new Cookie(name, value);
 		cookie.setHttpOnly(true);
 		cookie.setPath("/");
+		cookie.setMaxAge(86400);
 		response.addCookie(cookie);
 	}
 	
