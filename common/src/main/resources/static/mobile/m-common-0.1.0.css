@@ -5,7 +5,7 @@ body {font-size:0.875rem;margin:0 auto 0 auto;width:25.875rem;}
 
 
 .ellipsis {white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-#myAlert {position:fixed;left:0;right:0;top:0;bottom:0;margin:auto;z-index:99999999;width:15rem;height:3rem;text-align: center;}
+#myAlert {display:none; position:fixed;left:0;right:0;top:0;bottom:0;margin:auto;z-index:99999999;width:15rem;height:3rem;text-align: center;}
 .required {color:red}
 
 
