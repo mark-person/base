@@ -72,7 +72,7 @@ $(window).scroll(function() {
     }
 });
 function queryPage(pageNumber) {
-	$.post(controllerPath + "homeSearch", getQueryString(pageNumber), function(r) {
+	$.post(controllerPath + searchMethod, getQueryString(pageNumber), function(r) {
 		if (pageNumber == 1) {
 			currentPageNumber = 1;
 			$("#knowDiv").html(template("itemTemplate", r));
