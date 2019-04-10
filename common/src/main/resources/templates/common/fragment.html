@@ -10,14 +10,21 @@
 <script th:fragment="base" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" type="text/javascript"></script>
 -->
 
-
-
-
 <link   th:fragment="base" th:href="@{/static/cdn/bootstrap.min-4.1.3.css}" rel="stylesheet"/>
 <script th:fragment="base" th:src="@{/static/cdn/jquery.min-3.3.1.js}" type="text/javascript"></script>
 
 <script th:fragment="base" th:src="@{/static/cdn/popper.min-1.14.3.js}" type="text/javascript"></script>
 <script th:fragment="base" th:src="@{/static/cdn/bootstrap.min-4.1.3.js}" type="text/javascript"></script>
+
+
+<meta th:fragment="mobile" charset="UTF-8">
+<meta th:fragment="mobile" name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+<link   th:fragment="mobile" th:replace="::base"></link>
+<link   th:fragment="mobile" th:href="@{/static/mobile/iconfont-repo.css?v01}" rel="stylesheet" />
+<link   th:fragment="mobile" th:href="@{/static/mobile/m-common-0.1.0.css?v09}" rel="stylesheet" />
+<script th:fragment="mobile" th:src="@{/static/mobile/m-common-0.1.0.js?v09}" type="text/javascript" ></script>
+
+
 
 <!-- 
 <link   th:fragment="common" href="https://netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -35,10 +42,92 @@
 
 
 
-<link   th:fragment="mobile" th:replace="::base"></link>
-<link   th:fragment="mobile" th:href="@{/static/mobile/iconfont-repo.css?v02}" rel="stylesheet" />
-<link   th:fragment="mobile" th:href="@{/static/mobile/m-common-0.1.0.css?v02}" rel="stylesheet" />
-<script th:fragment="mobile" th:src="@{/static/mobile/m-common-0.1.0.js?v02}" type="text/javascript" ></script>
+
+<!--  -->
+
+<div th:fragment="mobileKnowPage" id="pageMsg">
+<script th:src="@{/static/cdn/template-3.0.0.js}" type="text/javascript" ></script>
+<script id="itemTemplate" type="text/html">
+{{each list as v i}}
+<div class="know-item-div" onclick="view({{v.kId}})">
+	<div class="know-img-div">
+		{{if v.mainImgSrc != null}}<img src="/img/{{v.mainImgSrc}}_100.jpg" class="know-img">{{else}}无图{{/if}}
+	</div>
+	<div class="know-title">{{getTitle(v.kTitle)}}</div>
+</div>
+{{/each}}
+</script>
+<script type="text/javascript" th:inline="javascript">
+var pageHasMore = true;
+var currentPageNumber = 1;
+$(window).scroll(function() {
+    if ($(this).scrollTop() + $(document).height() >= $(this).height() - 50) {
+    	if (pageHasMore) {
+    		pageHasMore = false;
+    		currentPageNumber++;
+    		$("#pageMsg div").hide();
+    		$("#pageLoading").show();
+    		queryPage(currentPageNumber);
+    	}
+    }
+});
+function queryPage(pageNumber) {
+	$.post(controllerPath + "homeSearch", getQueryString(pageNumber), function(r) {
+		if (pageNumber == 1) {
+			currentPageNumber = 1;
+			$("#knowDiv").html(template("itemTemplate", r));
+		}
+		else {
+			$("#knowDiv").append(template("itemTemplate", r));
+		}
+		
+		$("#pageMsg div").hide();
+		if (r.page.pageSize * r.page.pageNumber < r.page.totalRows) {
+			pageHasMore = true;
+			$("#pageMore").show();
+		}
+		else {
+			$("#pageEnd").show();
+		}
+	});
+}
+function view(kId) {
+	top.location.href = controllerPath + "view?id=" + kId;
+}
+
+var list = [[${list}]];
+var uspList = [[${uspList}]];
+if (list == null) {
+	alert("list不能为null");
+}
+if (uspList == null) {
+	alert("uspList不能为null");
+}
+$(function() {
+	$("#knowDiv").append(template("itemTemplate", list));
+	if (list.page.totalRows <= list.page.pageSize) {
+		pageHasMore = false;
+		$("#pageEnd").show();
+	}
+})
+template.config("escape", false);
+template.helper('getTitle', function(v) {
+	v = htmlEscape(v);
+	for (i in uspList) {
+		v = v.replace(new RegExp("\\$\\{" + uspList[i].uspId + "\\}", "g"), '<a href="/auto/mobile/nice?uspId=' + uspList[i].uspId + '">' + uspList[i].key + '</a>');
+		
+		var word = $("#word").val();
+		if (word) {
+			v = v.replace(word, '<span style="color:red">' + word + '</span>');
+		}
+	}
+	return v;
+})
+</script>
+<div id="pageMore"><p>-- 上拉加载更多 --</p></div>
+<div id="pageLoading"><p>-- 加载中... --</p></div>
+<div id="pageEnd"><p>-- 暂时就这么多了 --</p></div>
+</div>
 
 
 

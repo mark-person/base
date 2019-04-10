@@ -25,10 +25,10 @@ $.ajaxSetup({
 
 
 var LOADING = '\
-<div class="modal" id="loading" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" style="z-index:100000000">\
+<div class="modal" id="loadingModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static" style="z-index:999999">\
 	<div class="modal-dialog modal-sm" role="document"  style="position:fixed;left:0;right:0;top:0;bottom:0;margin:auto;text-align:center;width:15rem;height:3rem">\
 	<div class="modal-content" style="display:flex;align-items:center;">\
-		<div style="margin:0.5rem">⌛请稍候</div>\
+		<div style="margin:0.5rem; display:flex;justify-content:center;"><div class="loading"></div>请稍候</div>\
 	</div>\
 	</div>\
 </div>';
@@ -79,23 +79,26 @@ function myConfigOk() {
 }
 
 function showLoading() {
-	$('#loading').modal('show');
-	$($(".modal-backdrop")[$(".modal-backdrop").length - 1]).css("z-index", "9999");
+	
+	
+	$('#loadingModal').modal('show');
+	$($(".modal-backdrop")[$(".modal-backdrop").length - 1]).css("z-index", "99999");
 	$("#loading .modal-content").hide();
 	$($(".modal-backdrop")[$(".modal-backdrop").length - 1]).css("opacity", "0");
 	// n毫秒没有加载完页面才出现loading
-	$("#loading").data("isShowLoading", true);
+	$("#loadingModal").data("isShowLoading", true);
 	setTimeout(function() {
-		if ($("#loading").data("isShowLoading")) {
-			$("#loading .modal-content").show();
+		if ($("#loadingModal").data("isShowLoading")) {
+			$("#loadingModal .modal-content").show();
 			$(".modal-backdrop").css("opacity", "0.4");
 		}
 	}, 300);
 }
 
 function hideLoading() {
-	$("#loading").data("isShowLoading", false);
-	$('#loading').modal('hide');	
+	
+	$("#loadingModal").data("isShowLoading", false);
+	$('#loadingModal').modal('hide');	
 }
 
 
