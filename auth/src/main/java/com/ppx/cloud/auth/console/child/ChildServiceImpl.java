@@ -64,7 +64,7 @@ public class ChildServiceImpl extends MyDaoSupport {
 		int userId = AuthContext.getLoginAccount().getUserId();
 		bean.setModified(new Date());
 		// 帐号唯一，只能更新自己子帐号的
-		int r = updateEntity(bean, new LimitRecord("user_id", userId), "login_account");
+		int r = updateEntity(bean, LimitRecord.newInstance("user_id", userId), "login_account");
 		return ReturnMap.exists(r, "登录账号");
 	}
 	

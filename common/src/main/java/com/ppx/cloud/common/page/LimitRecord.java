@@ -5,10 +5,12 @@ public class LimitRecord {
 	private String colName;
 
 	private Object colValue;
-
-	public LimitRecord(String colName, Object colValue) {
-		this.colName = colName;
-		this.colValue = colValue;
+	
+	public static LimitRecord newInstance(String colName, Object colValue) {
+		LimitRecord limitRecord = new LimitRecord();
+		limitRecord.setColName(colName);
+		limitRecord.setColValue(colValue);
+		return limitRecord;
 	}
 
 	public String getColName() {
