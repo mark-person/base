@@ -3,13 +3,11 @@
  */
 package com.ppx.cloud.auth.config;
 
-import java.io.IOException;
 import java.util.Map;
 
 import org.apache.logging.log4j.util.Strings;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.ppx.cloud.common.exception.custom.ConfigException;
 import com.ppx.cloud.config.ConfigExec;
 
 /**

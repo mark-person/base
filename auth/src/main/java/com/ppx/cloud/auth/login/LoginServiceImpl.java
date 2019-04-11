@@ -3,15 +3,13 @@ package com.ppx.cloud.auth.login;
 import java.util.Date;
 import java.util.Objects;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.stereotype.Service;
 
-import com.ppx.cloud.auth.config.AuthUtils;
 import com.ppx.cloud.auth.config.AuthProperties;
+import com.ppx.cloud.auth.config.AuthUtils;
 import com.ppx.cloud.auth.pojo.AuthAccount;
 import com.ppx.cloud.common.jdbc.MyDaoSupport;
-import com.ppx.cloud.common.util.ApplicationUtils;
 
 /**
  * 登录
