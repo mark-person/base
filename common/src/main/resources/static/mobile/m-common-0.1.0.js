@@ -54,9 +54,11 @@ function alertShow(msg, cls, time) {
 	$("#myAlert").attr("class", "alert " + cls);
 	$("#myAlert").show();
 	if (time == 0) {
-		$("#myAlert span").html('<a href="javascript:$(\'#myAlert\').hide();">关闭</a>')
+		$("#myAlert").css({width:"25rem",height:"6rem"});
+		$("#myAlert span").html('<a href="javascript:$(\'#myAlert\').hide();hideLoading();">关闭</a>')
 	}
 	else {
+		$("#myAlert").css({width:"20rem",height:"3rem"});
 		$("#myAlert span a").remove();
 		setTimeout('$("#myAlert").hide();', time);
 	}
