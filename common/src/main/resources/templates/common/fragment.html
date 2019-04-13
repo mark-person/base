@@ -51,7 +51,7 @@
 {{each list as v i}}
 <div class="know-item-div" onclick="view({{v.kId}})">
 	<div class="know-img-div">
-		{{if v.mainImgSrc != null}}<img src="/img/knowledge/{{v.mainImgSrc}}_360.jpg" class="know-img">{{else}}无图{{/if}}
+		{{if v.mainImgSrc != null}}<img style="border-radius:0.4rem" src="/img/knowledge/{{v.mainImgSrc}}_360.jpg" class="know-img">{{else}}无图{{/if}}
 	</div>
 	<div class="know-title">{{getTitle(v.kTitle)}}</div>
 </div>
