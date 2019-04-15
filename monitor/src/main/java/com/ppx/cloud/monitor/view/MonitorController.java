@@ -73,16 +73,18 @@ public class MonitorController {
 	
 	public ModelAndView error() {
 		ModelAndView mv = new ModelAndView();
-		mv.addObject("list", listError(new Page(), null));
+		String today = DateUtils.today();
+		mv.addObject("today", today);
+		mv.addObject("list", listError(new Page(), today, null, null, null));
 		mv.addObject("listService", impl.listDisplayService());
 		return mv;
 	}
-	public Map<?, ?> listError(Page page, String serviceId) {
-		List<Map<String, Object>> list = impl.listError(page, serviceId);
+	public Map<?, ?> listError(Page page, String date, String beginTime, String endTime, String serviceId) {
+		List<Map<String, Object>> list = impl.listError(page, date, beginTime, endTime, serviceId);
 		return ReturnMap.of(page, list);
 	}
 	public Map<?, ?> getError(String accessId) {
-		return ReturnMap.of("pojo", impl.getDebug(accessId));
+		return ReturnMap.of("pojo", impl.getError(accessId));
 	}
 	
 	public ModelAndView gather() {
@@ -155,7 +157,7 @@ public class MonitorController {
 	@Autowired
 	private MonitorConfServiceImpl confImpl;
 	
-	private String DELETE_PASSWORD = "ppx";
+	// private String DELETE_PASSWORD = "ppx";
 	
 	public ModelAndView set(ModelAndView mv) {
 		mv.addObject("isAccessDebug", MonitorSwitchConfig.IS_DEBUG);

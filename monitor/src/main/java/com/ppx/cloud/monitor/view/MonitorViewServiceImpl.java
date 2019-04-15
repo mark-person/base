@@ -5,13 +5,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Objects;
 
 import org.apache.logging.log4j.util.Strings;
 import org.springframework.stereotype.Service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mysql.cj.xdevapi.Row;
 import com.ppx.cloud.common.jdbc.MyCriteria;
 import com.ppx.cloud.common.jdbc.nosql.LogTemplate;
 import com.ppx.cloud.common.page.Page;
@@ -87,17 +84,18 @@ public class MonitorViewServiceImpl extends PersistenceSupport {
 		return returnMap;
 	}
 	
-	public List<Map<String, Object>> listError(Page page, String serviceId) {
+	public List<Map<String, Object>> listError(Page page, String date, String beginTime, String endTime, String serviceId) {
 		List<Map<String, Object>> returnList = new ArrayList<Map<String, Object>>();
 		try (LogTemplate t = new LogTemplate()) {
 			
 			MyCriteria c = new MyCriteria("where");
 			c.addAnd("serviceId = ?", serviceId);
+			c.addPrePara(date);
 			
-			var cSql = new StringBuilder("select count(*) from error").append(c);
+			var cSql = new StringBuilder("select count(*) from error e join access a on a.accessId = a.accessId and a.accessDate = ?").append(c);
 			var qSql = new StringBuilder("select e.*, s.uriText, a.accessInfo from error e" + 
-					" left join access a on a.accessId = a.accessId" + 
-					" left join map_uri_seq s on s.uriSeq = a.uriSeq").append(c).append(" order by errorTime desc");
+					" join access a on a.accessId = a.accessId and a.accessDate = ?" + 
+					" left join map_uri_seq s on s.uriSeq = a.uriSeq").append(c).append("order by errorTime desc");
 			returnList = queryTablePage(t, page, cSql, qSql, c.getParaList());
 		}
 		return returnList;
@@ -182,7 +180,7 @@ public class MonitorViewServiceImpl extends PersistenceSupport {
 		
 		try (LogTemplate t = new LogTemplate()) {
 			var cSql = new StringBuilder("select count(*) from stat_warning w").append(c);
-			var qSql = new StringBuilder("select w.* from stat_warning w").append(c).append(" order by w.lasted desc");
+			var qSql = new StringBuilder("select w.*, m.uriText from stat_warning w left join map_uri_seq m on w.uriSeq = m.uriSeq").append(c).append(" order by w.lasted desc");
 			r = queryTablePage(t, page, cSql, qSql, c.getParaList());
 		}
 		
