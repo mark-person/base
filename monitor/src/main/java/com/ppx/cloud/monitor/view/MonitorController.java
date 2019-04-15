@@ -7,10 +7,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ppx.cloud.common.contoller.ReturnMap;
@@ -193,7 +190,7 @@ public class MonitorController {
 	
 	public Map<String, Object> display(@RequestParam String serviceId, @RequestParam int display) {
 		confImpl.display(serviceId, display);	
-		return ReturnMap.of("listService", impl.listAllService(new Page()));
+		return ReturnMap.of();
 	}
 	
 	

@@ -51,7 +51,7 @@ function toDown(n) {
 
 function toOrder(a) {
 	$('#loading').modal('show');
-	$.post([[@{/monitorConf/orderService}]], "serviceIds=" + a, function(d){
+	$.post([[@{/auto/monitor/orderService}]], "serviceIds=" + a, function(d){
 		refreshPage(d);
 		$('#loading').modal('hide');
 	});
@@ -59,8 +59,8 @@ function toOrder(a) {
 
 function display(serviceId, display) {
 	showLoading();
-	$.post([[@{/monitorConf/display}]], "serviceId=" + serviceId + "&display=" + display, function(data){
-		refreshPage(data);
+	$.post([[@{/auto/monitor/display}]], "serviceId=" + serviceId + "&display=" + display, function(data) {
+		//$("#pageDiv").query();
 		hideLoading();
 	});
 }
@@ -68,7 +68,7 @@ function display(serviceId, display) {
 </head>
 
 <body>
-<div class="container">
+<div class="container-fluid">
 
 <div th:replace="monitor/monitorFragment::nav('service')"></div>
 
@@ -110,12 +110,9 @@ function display(serviceId, display) {
 			<td>{{v.serviceInfo.modified}}</td>
 			<td>
 				{{if v.serviceDisplay == 1}}显示{{else}}隐藏{{/if}}
-				<a class="glyphicon glyphicon-retweet" title="转换" href="#" onclick="display('{{v._id}}', {{if v.serviceDisplay == 1}}0{{else}}1{{/if}})"></a>
+				<a class="fa fa-exchange" title="转换" href="#" onclick="display('{{v.serviceId}}', {{if v.serviceDisplay == 1}}0{{else}}1{{/if}})"></a>
 			</td>
-			<td>
-				{{if arrayList.length != 1 && true}} 
-				xxxxxxxxxxxxxx
-				{{/if}}					
+			<td>				
 			</td>
 			<td><a href="#" data-content="{{transfer(v)}}" onclick="viewDetail(this)">详情</a></td>
 		</tr>

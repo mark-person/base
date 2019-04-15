@@ -70,6 +70,9 @@ public class MonitorConfServiceImpl extends PersistenceSupport {
 	}
 
 	public void display(String serviceId, int display) {
-		
+		String sql = "update service set serviceDisplay = ? where serviceId = ?";
+		try (LogTemplate t = new LogTemplate()) {
+			t.sql(sql, display, serviceId);
+		}
 	}
 }

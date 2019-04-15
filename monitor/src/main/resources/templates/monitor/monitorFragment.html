@@ -8,8 +8,7 @@
 
 <div th:fragment="nav(id)">
 <ul class="nav nav-tabs">
-	<li class="nav-item"><a class="nav-link" id="index" th:href="@{/auto/monitor/index}">首页</a></li>
-	<!--  
+	<li class="nav-item"><a class="nav-link" id="index" th:href="@{/auto/monitor/index}">首页</a></li> 
     <li class="nav-item"><a class="nav-link" id="service" th:href="@{/auto/monitor/service}">服务</a></li>
     <li class="nav-item"><a class="nav-link" id="startup"  th:href="@{/auto/monitor/startup}">启动日志</a></li>
     <li class="nav-item"><a class="nav-link" id="access"  th:href="@{/auto/monitor/access}">访问日志</a></li>
@@ -19,7 +18,6 @@
     <li class="nav-item"><a class="nav-link" id="statResponse"  th:href="@{/auto/monitor/statResponse}">SQL统计</a></li>
     <li class="nav-item"><a class="nav-link" id="statWarning"  th:href="@{/auto/monitor/statWarning}">warning</a></li>
     <li class="nav-item"><a class="nav-link" id="debug"  th:href="@{/auto/monitor/debug}">debug</a></li>
-    -->
 </ul>
 <script type="text/javascript" th:inline="javascript">$("#" + [[${id}]]).addClass("active");</script>
 </div>
