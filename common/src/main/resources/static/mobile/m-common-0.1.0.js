@@ -13,7 +13,7 @@ $.ajaxSetup({
 		if (r.responseJSON) {
 			msg = "[" + r.responseJSON.errcode + "]" + r.responseJSON.errmsg;
 		}
-		$('#loading').modal('hide');
+		hideLoading();
 		if (r.status == 0) {
 			alertWarning("网络不通，请检查网络");
 		}
