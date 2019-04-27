@@ -15,6 +15,8 @@ public class LoginAccount  {
 	
 	private String userName;
 	
+	private String args;
+	
 	public boolean isMainAccount() {
 		return accountId == userId;
 	}
@@ -53,6 +55,14 @@ public class LoginAccount  {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public String getArgs() {
+		return args;
+	}
+
+	public void setArgs(String args) {
+		this.args = args;
 	}
 	
 	

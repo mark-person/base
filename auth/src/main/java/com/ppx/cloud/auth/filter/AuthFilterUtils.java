@@ -71,12 +71,14 @@ public class AuthFilterUtils {
         String loginAccount = jwt.getClaim("loginAccount").asString();
         Integer userId = jwt.getClaim("userId").asInt();
         String userName = jwt.getClaim("userName").asString();
+        String args = jwt.getClaim("args").asString();
 
         LoginAccount account = new LoginAccount();
         account.setAccountId(accountId);
         account.setLoginAccount(loginAccount);
         account.setUserId(userId);
         account.setUserName(userName);
+        account.setArgs(args);
         
         // 传值给 monitor
         CommonContext.setAccountId(accountId);
@@ -106,7 +108,7 @@ public class AuthFilterUtils {
             // 重新在cookie上生成一个token
             token = JWT.create().withIssuedAt(new Date()).withClaim("accountId", accountId)
                     .withClaim("loginAccount", loginAccount).withClaim("userId", userId).withClaim("userName", userName)
-                    .withClaim("modified", accountDb.getModified()).sign(algorithm);
+                    .withClaim("modified", accountDb.getModified()).withClaim("args", args).sign(algorithm);
             CookieUtils.setCookie(response, AuthUtils.PPXTOKEN, token);
         }
 
