@@ -60,8 +60,14 @@
 <script type="text/javascript" th:inline="javascript">
 var pageHasMore = true;
 var currentPageNumber = 1;
+
+
 $(window).scroll(function() {
-    if ($(this).scrollTop() + $(document).height() >= $(this).height() - 50) {
+	var totalheight = parseFloat($(window).height()) + parseFloat($(window).scrollTop());//浏览器的高度加上滚动条的高度
+	// alert(totalheight + "||" + $(document).height());
+	
+    // if ($(this).scrollTop() + $(document).height() >= $(this).height() - 50) {
+    if ($(document).height() <= totalheight + 50) {
     	if (pageHasMore) {
     		pageHasMore = false;
     		currentPageNumber++;
